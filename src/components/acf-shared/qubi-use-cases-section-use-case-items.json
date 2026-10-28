@@ -10,12 +10,24 @@
     "title": {
       "type": "text"
     },
-     "Publish": {
-  "type": "boolean",
-  "default": true
-},
+    "Publish": {
+      "type": "boolean",
+      "default": true
+    },
     "description": {
       "type": "richtext"
+    },
+    "tab_key": {
+      "type": "string"
+    },
+    "panel_title": {
+      "type": "string"
+    },
+    "scenario": {
+      "type": "text"
+    },
+    "chips": {
+      "type": "text"
     }
   }
 }

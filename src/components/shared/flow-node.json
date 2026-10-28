@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_flow_nodes",
+  "info": {
+    "displayName": "flow-node"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

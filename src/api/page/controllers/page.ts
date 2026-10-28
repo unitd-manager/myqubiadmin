@@ -40,6 +40,7 @@ const PAGE_BUILDER_COMPONENTS = [
   'acf-sections.solutions-comparison-block',
   'acf-sections.solutions-problems-block',
   'acf-sections.solutions-what-we-do',
+   
 
   // Demo
   'acf-sections.demo-sections-hero',

@@ -10,10 +10,10 @@
     "description": {
       "type": "richtext"
     },
-     "Publish": {
-  "type": "boolean",
-  "default": true
-},
+    "Publish": {
+      "type": "boolean",
+      "default": true
+    },
     "button": {
       "type": "component",
       "component": "shared.menu-item",
@@ -23,6 +23,12 @@
       "type": "component",
       "component": "shared.menu-item",
       "repeatable": false
+    },
+    "eyebrow": {
+      "type": "string"
+    },
+    "title_highlight": {
+      "type": "string"
     }
   }
 }

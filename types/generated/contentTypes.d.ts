@@ -627,10 +627,15 @@ export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
     logo: Schema.Attribute.Media<'images'>;
     logo_link: Schema.Attribute.String;
     nav_links: Schema.Attribute.Component<'shared.nav-parent', true>;
+    powered_by_label: Schema.Attribute.String;
+    powered_by_logo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    watch_button_label: Schema.Attribute.String;
   };
 }
 

@@ -7,10 +7,10 @@
     "eyebrow": {
       "type": "string"
     },
-     "Publish": {
-  "type": "boolean",
-  "default": true
-},
+    "Publish": {
+      "type": "boolean",
+      "default": true
+    },
     "main_title": {
       "type": "text"
     },
@@ -18,6 +18,36 @@
       "type": "component",
       "component": "acf-shared.qubi-outcomes-section-outcome-items",
       "repeatable": true
+    },
+    "title_highlight": {
+      "type": "string"
+    },
+    "strip_items": {
+      "type": "component",
+      "component": "shared.text-item",
+      "repeatable": true
+    },
+    "featured_kicker": {
+      "type": "string"
+    },
+    "featured_title": {
+      "type": "string"
+    },
+    "featured_description": {
+      "type": "text"
+    },
+    "demo_button_label": {
+      "type": "string"
+    },
+    "clips": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

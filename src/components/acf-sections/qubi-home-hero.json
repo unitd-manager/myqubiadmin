@@ -14,9 +14,9 @@
       "type": "richtext"
     },
     "Publish": {
-  "type": "boolean",
-  "default": true
-},
+      "type": "boolean",
+      "default": true
+    },
     "button": {
       "type": "component",
       "component": "shared.menu-item",
@@ -28,6 +28,50 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "title_highlight": {
+      "type": "string"
+    },
+    "secondary_button": {
+      "type": "component",
+      "component": "shared.menu-item",
+      "repeatable": false
+    },
+    "trust_text": {
+      "type": "string"
+    },
+    "window_title": {
+      "type": "string"
+    },
+    "sidebar_logo": {
+      "type": "string"
+    },
+    "sidebar_items": {
+      "type": "component",
+      "component": "shared.sidebar-item",
+      "repeatable": true
+    },
+    "workspace_title": {
+      "type": "string"
+    },
+    "workspace_subtitle": {
+      "type": "string"
+    },
+    "workspace_status": {
+      "type": "string"
+    },
+    "flow_nodes": {
+      "type": "component",
+      "component": "shared.flow-node",
+      "repeatable": true
+    },
+    "video_modal_title": {
+      "type": "string"
+    },
+    "ticker_items": {
+      "type": "component",
+      "component": "shared.text-item",
+      "repeatable": true
     }
   }
 }

@@ -10,24 +10,43 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "logo": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "logo_link": {
       "type": "string"
     },
     "nav_links": {
       "type": "component",
-      "repeatable": true,
-      "component": "shared.nav-parent"
+      "component": "shared.nav-parent",
+      "repeatable": true
     },
     "cta_label": {
       "type": "string"
     },
     "cta_url": {
+      "type": "string"
+    },
+    "powered_by_label": {
+      "type": "string"
+    },
+    "powered_by_logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "watch_button_label": {
       "type": "string"
     }
   }

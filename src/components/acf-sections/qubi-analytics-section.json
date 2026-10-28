@@ -10,14 +10,52 @@
     "main_title": {
       "type": "text"
     },
-     "Publish": {
-  "type": "boolean",
-  "default": true
-},
+    "Publish": {
+      "type": "boolean",
+      "default": true
+    },
     "features": {
       "type": "component",
       "component": "acf-shared.qubi-analytics-section-features",
       "repeatable": true
+    },
+    "featured_tag": {
+      "type": "string"
+    },
+    "featured_quote": {
+      "type": "text"
+    },
+    "featured_metric": {
+      "type": "string"
+    },
+    "featured_button": {
+      "type": "component",
+      "component": "shared.menu-item",
+      "repeatable": false
+    },
+    "bridge_logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "bridge_prefix": {
+      "type": "string"
+    },
+    "bridge_brand": {
+      "type": "string"
+    },
+    "bridge_description": {
+      "type": "text"
+    },
+    "bridge_button": {
+      "type": "component",
+      "component": "shared.menu-item",
+      "repeatable": false
     }
   }
 }

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_acf_sections_qubi_tickers",
+  "info": {
+    "displayName": "qubi-ticker"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "component": "shared.text-item",
+      "repeatable": true
+    },
+    "Publish": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

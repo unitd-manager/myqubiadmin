@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_sidebar_items",
+  "info": {
+    "displayName": "sidebar-item"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "is_active": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

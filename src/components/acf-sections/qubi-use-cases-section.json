@@ -10,14 +10,27 @@
     "main_title": {
       "type": "text"
     },
-     "Publish": {
-  "type": "boolean",
-  "default": true
-},
+    "Publish": {
+      "type": "boolean",
+      "default": true
+    },
     "use_case_items": {
       "type": "component",
       "component": "acf-shared.qubi-use-cases-section-use-case-items",
       "repeatable": true
+    },
+    "scenario_label": {
+      "type": "string"
+    },
+    "core_logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
