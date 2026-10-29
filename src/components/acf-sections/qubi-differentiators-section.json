@@ -11,14 +11,23 @@
     "main_title": {
       "type": "text"
     },
-     "Publish": {
-  "type": "boolean",
-  "default": true
-},
+    "Publish": {
+      "type": "boolean",
+      "default": true
+    },
     "items": {
       "type": "component",
       "component": "acf-shared.qubi-differentiator-item",
       "repeatable": true
+    },
+    "section_eyebrow": {
+      "type": "string"
+    },
+    "section_title": {
+      "type": "string"
+    },
+    "quote": {
+      "type": "text"
     }
   }
 }

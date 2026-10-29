@@ -8,15 +8,18 @@
     "badge_text": {
       "type": "string"
     },
-     "Publish": {
-  "type": "boolean",
-  "default": true
-},
+    "Publish": {
+      "type": "boolean",
+      "default": true
+    },
     "main_title": {
       "type": "text"
     },
     "description": {
       "type": "richtext"
+    },
+    "title_highlight": {
+      "type": "string"
     }
   }
 }

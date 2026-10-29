@@ -286,6 +286,9 @@ export interface AcfSectionsQubiDifferentiatorsSection
     >;
     main_title: Schema.Attribute.Text;
     Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    quote: Schema.Attribute.Text;
+    section_eyebrow: Schema.Attribute.String;
+    section_title: Schema.Attribute.String;
   };
 }
 
@@ -506,6 +509,7 @@ export interface AcfSectionsQubiSimpleHero extends Struct.ComponentSchema {
     description: Schema.Attribute.RichText;
     main_title: Schema.Attribute.Text;
     Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    title_highlight: Schema.Attribute.String;
   };
 }
 
@@ -953,6 +957,7 @@ export interface AcfSharedQubiFaqItem extends Struct.ComponentSchema {
   };
   attributes: {
     answer: Schema.Attribute.Text;
+    category: Schema.Attribute.String;
     Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     question: Schema.Attribute.String;
   };
@@ -1448,6 +1453,18 @@ export interface SectionsTestimonialSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFaqItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_faq_items';
+  info: {
+    displayName: 'faq-item';
+  };
+  attributes: {
+    answer: Schema.Attribute.Text;
+    category: Schema.Attribute.String;
+    question: Schema.Attribute.String;
+  };
+}
+
 export interface SharedFlowNode extends Struct.ComponentSchema {
   collectionName: 'components_shared_flow_nodes';
   info: {
@@ -1455,6 +1472,17 @@ export interface SharedFlowNode extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedFooterColumn extends Struct.ComponentSchema {
+  collectionName: 'components_shared_footer_columns';
+  info: {
+    displayName: 'footer-column';
+  };
+  attributes: {
+    links: Schema.Attribute.Component<'shared.menu-item', true>;
     title: Schema.Attribute.String;
   };
 }
@@ -1628,7 +1656,9 @@ declare module '@strapi/strapi' {
       'sections.gallery': SectionsGallery;
       'sections.hero': SectionsHero;
       'sections.testimonial-section': SectionsTestimonialSection;
+      'shared.faq-item': SharedFaqItem;
       'shared.flow-node': SharedFlowNode;
+      'shared.footer-column': SharedFooterColumn;
       'shared.menu-item': SharedMenuItem;
       'shared.nav-parent': SharedNavParent;
       'shared.seo': SharedSeo;

@@ -10,6 +10,7 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "copyright_text": {
       "type": "string"
@@ -20,8 +21,44 @@
     },
     "links": {
       "type": "component",
-      "repeatable": true,
-      "component": "shared.menu-item"
+      "component": "shared.menu-item",
+      "repeatable": true
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "powered_by_label": {
+      "type": "string"
+    },
+    "powered_by_logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tagline": {
+      "type": "text"
+    },
+    "columns": {
+      "type": "component",
+      "component": "shared.footer-column",
+      "repeatable": true
+    },
+    "legal_links": {
+      "type": "component",
+      "component": "shared.menu-item",
+      "repeatable": true
     }
   }
 }
