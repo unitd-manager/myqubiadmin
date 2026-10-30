@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_acf_shared_platform_step_items",
+  "info": {
+    "displayName": "Platform Step Item",
+    "description": "Numbered / titled row used by the platform flow and ladder blocks"
+  },
+  "attributes": {
+    "number": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "Publish": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

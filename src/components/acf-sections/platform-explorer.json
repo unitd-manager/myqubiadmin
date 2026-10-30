@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_acf_sections_platform_explorers",
+  "info": {
+    "displayName": "Platform Explorer",
+    "description": "Capability groups sidebar + selected product detail. Category order comes from 'categories'; each product's 'category' must match one of them."
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "main_title": {
+      "type": "text"
+    },
+    "title_highlight": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "sidebar_label": {
+      "type": "string"
+    },
+    "details_heading": {
+      "type": "string"
+    },
+    "footer_text": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "component",
+      "component": "acf-shared.qubi-text-paragraph",
+      "repeatable": true
+    },
+    "products": {
+      "type": "component",
+      "component": "acf-shared.platform-product-item",
+      "repeatable": true
+    },
+    "Publish": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

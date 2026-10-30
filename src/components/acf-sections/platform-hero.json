@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_acf_sections_platform_heroes",
+  "info": {
+    "displayName": "Platform Hero",
+    "description": "Platform page hero with proof strip (intro text + stats)"
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "main_title": {
+      "type": "text"
+    },
+    "title_highlight": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "intro_text": {
+      "type": "text"
+    },
+    "stats": {
+      "type": "component",
+      "component": "acf-shared.platform-label-value",
+      "repeatable": true
+    },
+    "Publish": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

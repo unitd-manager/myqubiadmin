@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_acf_sections_platform_bridges",
+  "info": {
+    "displayName": "Platform Bridge",
+    "description": "Platform + Solutions link block with two buttons"
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "main_title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.menu-item",
+      "repeatable": false
+    },
+    "secondary_button": {
+      "type": "component",
+      "component": "shared.menu-item",
+      "repeatable": false
+    },
+    "Publish": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

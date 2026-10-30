@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_acf_sections_platform_scales",
+  "info": {
+    "displayName": "Platform Scale",
+    "description": "Designed to Grow: copy + numbered ladder"
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "main_title": {
+      "type": "text"
+    },
+    "title_highlight": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "steps": {
+      "type": "component",
+      "component": "acf-shared.platform-step-item",
+      "repeatable": true
+    },
+    "Publish": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

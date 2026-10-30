@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_acf_shared_platform_label_values",
+  "info": {
+    "displayName": "Platform Label Value",
+    "description": "Short label + value pair (hero stats, foundation card points)"
+  },
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    },
+    "Publish": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

@@ -149,6 +149,116 @@ export interface AcfSectionsHero extends Struct.ComponentSchema {
   };
 }
 
+export interface AcfSectionsPlatformBridge extends Struct.ComponentSchema {
+  collectionName: 'components_acf_sections_platform_bridges';
+  info: {
+    description: 'Platform + Solutions link block with two buttons';
+    displayName: 'Platform Bridge';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'shared.menu-item', false>;
+    description: Schema.Attribute.RichText;
+    eyebrow: Schema.Attribute.String;
+    main_title: Schema.Attribute.Text;
+    Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    secondary_button: Schema.Attribute.Component<'shared.menu-item', false>;
+  };
+}
+
+export interface AcfSectionsPlatformExplorer extends Struct.ComponentSchema {
+  collectionName: 'components_acf_sections_platform_explorers';
+  info: {
+    description: "Capability groups sidebar + selected product detail. Category order comes from 'categories'; each product's 'category' must match one of them.";
+    displayName: 'Platform Explorer';
+  };
+  attributes: {
+    categories: Schema.Attribute.Component<
+      'acf-shared.qubi-text-paragraph',
+      true
+    >;
+    description: Schema.Attribute.RichText;
+    details_heading: Schema.Attribute.String;
+    eyebrow: Schema.Attribute.String;
+    footer_text: Schema.Attribute.String;
+    main_title: Schema.Attribute.Text;
+    products: Schema.Attribute.Component<
+      'acf-shared.platform-product-item',
+      true
+    >;
+    Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    sidebar_label: Schema.Attribute.String;
+    title_highlight: Schema.Attribute.String;
+  };
+}
+
+export interface AcfSectionsPlatformFoundation extends Struct.ComponentSchema {
+  collectionName: 'components_acf_sections_platform_foundations';
+  info: {
+    description: 'Centered heading with foundation cards';
+    displayName: 'Platform Foundation';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<
+      'acf-shared.platform-foundation-card',
+      true
+    >;
+    description: Schema.Attribute.RichText;
+    eyebrow: Schema.Attribute.String;
+    main_title: Schema.Attribute.Text;
+    Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    title_highlight: Schema.Attribute.String;
+  };
+}
+
+export interface AcfSectionsPlatformHero extends Struct.ComponentSchema {
+  collectionName: 'components_acf_sections_platform_heroes';
+  info: {
+    description: 'Platform page hero with proof strip (intro text + stats)';
+    displayName: 'Platform Hero';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    eyebrow: Schema.Attribute.String;
+    intro_text: Schema.Attribute.Text;
+    main_title: Schema.Attribute.Text;
+    Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    stats: Schema.Attribute.Component<'acf-shared.platform-label-value', true>;
+    title_highlight: Schema.Attribute.String;
+  };
+}
+
+export interface AcfSectionsPlatformScale extends Struct.ComponentSchema {
+  collectionName: 'components_acf_sections_platform_scales';
+  info: {
+    description: 'Designed to Grow: copy + numbered ladder';
+    displayName: 'Platform Scale';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    eyebrow: Schema.Attribute.String;
+    main_title: Schema.Attribute.Text;
+    Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    steps: Schema.Attribute.Component<'acf-shared.platform-step-item', true>;
+    title_highlight: Schema.Attribute.String;
+  };
+}
+
+export interface AcfSectionsPlatformStory extends Struct.ComponentSchema {
+  collectionName: 'components_acf_sections_platform_stories';
+  info: {
+    description: 'Copy on the left, flow rows on the right (How it fits together)';
+    displayName: 'Platform Story';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    eyebrow: Schema.Attribute.String;
+    main_title: Schema.Attribute.Text;
+    Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    steps: Schema.Attribute.Component<'acf-shared.platform-step-item', true>;
+    title_highlight: Schema.Attribute.String;
+  };
+}
+
 export interface AcfSectionsQubiAnalyticsSection
   extends Struct.ComponentSchema {
   collectionName: 'components_acf_sections_qubi_analytics_section';
@@ -857,6 +967,68 @@ export interface AcfSharedFormFields extends Struct.ComponentSchema {
     placeholder: Schema.Attribute.String;
     Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     width: Schema.Attribute.Enumeration<['full', 'half']>;
+  };
+}
+
+export interface AcfSharedPlatformFoundationCard
+  extends Struct.ComponentSchema {
+  collectionName: 'components_acf_shared_platform_foundation_cards';
+  info: {
+    displayName: 'Platform Foundation Card';
+  };
+  attributes: {
+    dark: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    description: Schema.Attribute.Text;
+    eyebrow: Schema.Attribute.String;
+    points: Schema.Attribute.Component<'acf-shared.platform-label-value', true>;
+    Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface AcfSharedPlatformLabelValue extends Struct.ComponentSchema {
+  collectionName: 'components_acf_shared_platform_label_values';
+  info: {
+    description: 'Short label + value pair (hero stats, foundation card points)';
+    displayName: 'Platform Label Value';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    value: Schema.Attribute.String;
+  };
+}
+
+export interface AcfSharedPlatformProductItem extends Struct.ComponentSchema {
+  collectionName: 'components_acf_shared_platform_product_items';
+  info: {
+    description: 'One product in the platform capability explorer';
+    displayName: 'Platform Product Item';
+  };
+  attributes: {
+    capabilities: Schema.Attribute.Component<
+      'acf-shared.qubi-text-paragraph',
+      true
+    >;
+    category: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    tag: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface AcfSharedPlatformStepItem extends Struct.ComponentSchema {
+  collectionName: 'components_acf_shared_platform_step_items';
+  info: {
+    description: 'Numbered / titled row used by the platform flow and ladder blocks';
+    displayName: 'Platform Step Item';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    number: Schema.Attribute.String;
+    Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -1574,6 +1746,12 @@ declare module '@strapi/strapi' {
       'acf-sections.faq-list': AcfSectionsFaqList;
       'acf-sections.footer': AcfSectionsFooter;
       'acf-sections.hero': AcfSectionsHero;
+      'acf-sections.platform-bridge': AcfSectionsPlatformBridge;
+      'acf-sections.platform-explorer': AcfSectionsPlatformExplorer;
+      'acf-sections.platform-foundation': AcfSectionsPlatformFoundation;
+      'acf-sections.platform-hero': AcfSectionsPlatformHero;
+      'acf-sections.platform-scale': AcfSectionsPlatformScale;
+      'acf-sections.platform-story': AcfSectionsPlatformStory;
       'acf-sections.qubi-analytics-section': AcfSectionsQubiAnalyticsSection;
       'acf-sections.qubi-blog-list-section': AcfSectionsQubiBlogListSection;
       'acf-sections.qubi-callout-section': AcfSectionsQubiCalloutSection;
@@ -1614,6 +1792,10 @@ declare module '@strapi/strapi' {
       'acf-shared.bullet-points': AcfSharedBulletPoints;
       'acf-shared.card': AcfSharedCard;
       'acf-shared.form-fields': AcfSharedFormFields;
+      'acf-shared.platform-foundation-card': AcfSharedPlatformFoundationCard;
+      'acf-shared.platform-label-value': AcfSharedPlatformLabelValue;
+      'acf-shared.platform-product-item': AcfSharedPlatformProductItem;
+      'acf-shared.platform-step-item': AcfSharedPlatformStepItem;
       'acf-shared.qubi-analytics-section-features': AcfSharedQubiAnalyticsSectionFeatures;
       'acf-shared.qubi-capabilities-section-capability-items': AcfSharedQubiCapabilitiesSectionCapabilityItems;
       'acf-shared.qubi-case-metric': AcfSharedQubiCaseMetric;

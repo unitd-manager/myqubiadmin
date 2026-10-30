@@ -1,58 +1,11 @@
 import { factories } from '@strapi/strapi';
 import { buildDynamicZonePopulate } from '../../../utils/deep-populate';
 
-const PAGE_BUILDER_COMPONENTS = [
-  'acf-sections.qubi-home-hero',
-  'acf-sections.qubi-demo-preview',
-  'acf-sections.qubi-problem-section',
-  'acf-sections.qubi-capabilities-section',
-  'acf-sections.qubi-outcomes-section',
-  'acf-sections.qubi-how-it-works-section',
-  'acf-sections.qubi-use-cases-section',
-  'acf-sections.qubi-integration-section',
-  'acf-sections.qubi-human-in-loop-section',
-  'acf-sections.qubi-analytics-section',
-  'acf-sections.qubi-final-cta-section',
-  'acf-sections.qubi-simple-hero',
-  'acf-sections.qubi-stats-section',
-  'acf-sections.qubi-case-studies-section',
-
-  // QUBI Differentiators
-  'acf-sections.qubi-differentiators-section',
-
-  'acf-sections.qubi-story-section',
-  'acf-sections.qubi-callout-section',
-  'acf-sections.qubi-plans-section',
-  'acf-sections.qubi-icon-grid-section',
-  'acf-sections.qubi-execution-section',
-  'acf-sections.qubi-comparison-section',
-  'acf-sections.qubi-faq-section',
-  'acf-sections.qubi-blog-list-section',
-  'acf-sections.qubi-subscribe-cta-section',
-
-  // Solutions
-  'acf-sections.solutions-hero-banner',
-  'acf-sections.solutions-stats-band',
-  'acf-sections.solutions-use-cases-layout',
-  'acf-sections.solutions-industry-layout',
-  'acf-sections.solutions-execution-flow',
-  'acf-sections.solutions-final-cta',
-  'acf-sections.solutions-comparison-block',
-  'acf-sections.solutions-problems-block',
-  'acf-sections.solutions-what-we-do',
-   
-
-  // Demo
-  'acf-sections.demo-sections-hero',
-  'acf-sections.demo-sections-video-showcase',
-  'acf-sections.demo-sections-capability-card',
-  'acf-sections.demo-sections-contact-cta',
-
-  // FAQ
-  'acf-sections.faq-hero',
-  'acf-sections.faq-list',
-  'acf-sections.faq-cta',
-];
+// Read the pageBuilder component list from the Page schema at runtime, so any
+// section registered in config/section-components.js (then written into the
+// schema by `npm run build:page-schema`) is populated without editing this file.
+const getPageBuilderComponents = (): string[] =>
+  (strapi.contentType('api::page.page').attributes as any).pageBuilder?.components ?? [];
 
 export default factories.createCoreController(
   'api::page.page',
@@ -68,7 +21,7 @@ export default factories.createCoreController(
 
           populate: {
             pageBuilder: {
-              on: buildDynamicZonePopulate(PAGE_BUILDER_COMPONENTS),
+              on: buildDynamicZonePopulate(getPageBuilderComponents()),
             },
 
             seo: {

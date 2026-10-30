@@ -742,6 +742,12 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'acf-sections.faq-hero',
         'acf-sections.faq-list',
         'acf-sections.faq-cta',
+        'acf-sections.platform-hero',
+        'acf-sections.platform-story',
+        'acf-sections.platform-explorer',
+        'acf-sections.platform-foundation',
+        'acf-sections.platform-scale',
+        'acf-sections.platform-bridge',
         'acf-sections.qubi-differentiators-section',
       ]
     >;

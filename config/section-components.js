@@ -49,6 +49,15 @@ const FAQ_COMPONENTS = [
   "acf-sections.faq-cta",
 ];
 
+const PLATFORM_COMPONENTS = [
+  "acf-sections.platform-hero",
+  "acf-sections.platform-story",
+  "acf-sections.platform-explorer",
+  "acf-sections.platform-foundation",
+  "acf-sections.platform-scale",
+  "acf-sections.platform-bridge",
+];
+
 const GLOBAL_LAYOUT_COMPONENTS = [];
 
 const PAGE_BUILDER_COMPONENTS = [
@@ -56,6 +65,7 @@ const PAGE_BUILDER_COMPONENTS = [
   ...SOLUTIONS_COMPONENTS,
   ...DEMO_COMPONENTS,
   ...FAQ_COMPONENTS,
+  ...PLATFORM_COMPONENTS,
   ...GLOBAL_LAYOUT_COMPONENTS,
 ];
 
@@ -64,6 +74,7 @@ const LANDING_SECTION_COMPONENTS = [
   ...SOLUTIONS_COMPONENTS,
   ...DEMO_COMPONENTS,
   ...FAQ_COMPONENTS,
+  ...PLATFORM_COMPONENTS,
   ...GLOBAL_LAYOUT_COMPONENTS,
 ];
 
