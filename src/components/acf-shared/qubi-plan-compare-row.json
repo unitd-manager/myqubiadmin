@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_acf_shared_qubi_plan_compare_rows",
+  "info": {
+    "displayName": "Qubi Plan Compare Row",
+    "description": "One row of the compare-plans table: an aspect plus one value per plan, in plan order"
+  },
+  "attributes": {
+    "aspect": {
+      "type": "string"
+    },
+    "values": {
+      "type": "component",
+      "component": "acf-shared.qubi-text-paragraph",
+      "repeatable": true
+    },
+    "Publish": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

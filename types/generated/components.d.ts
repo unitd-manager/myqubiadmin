@@ -179,6 +179,8 @@ export interface AcfSectionsPlatformExplorer extends Struct.ComponentSchema {
     description: Schema.Attribute.RichText;
     details_heading: Schema.Attribute.String;
     eyebrow: Schema.Attribute.String;
+    footer_brand: Schema.Attribute.String;
+    footer_logo: Schema.Attribute.Media<'images'>;
     footer_text: Schema.Attribute.String;
     main_title: Schema.Attribute.Text;
     products: Schema.Attribute.Component<
@@ -358,6 +360,7 @@ export interface AcfSectionsQubiComparisonSection
     displayName: 'Qubi Comparison Section';
   };
   attributes: {
+    aspect_label: Schema.Attribute.String;
     eyebrow: Schema.Attribute.String;
     main_title: Schema.Attribute.Text;
     Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
@@ -575,15 +578,29 @@ export interface AcfSectionsQubiOutcomesSection extends Struct.ComponentSchema {
 export interface AcfSectionsQubiPlansSection extends Struct.ComponentSchema {
   collectionName: 'components_acf_sections_qubi_plans_sections';
   info: {
-    description: 'Pricing plan cards with feature lists and a highlight option';
+    description: 'Pricing plan explorer: plan tabs, selected plan details, best-fit panel, program profile and the compare-plans table';
     displayName: 'Qubi Plans Section';
   };
   attributes: {
+    compare_aspect_label: Schema.Attribute.String;
+    compare_button_label: Schema.Attribute.String;
+    compare_rows: Schema.Attribute.Component<
+      'acf-shared.qubi-plan-compare-row',
+      true
+    >;
+    compare_title: Schema.Attribute.String;
     cta_url: Schema.Attribute.String;
-    description: Schema.Attribute.Text;
     eyebrow: Schema.Attribute.String;
+    fit_label: Schema.Attribute.String;
     main_title: Schema.Attribute.Text;
+    nav_label: Schema.Attribute.String;
     plans: Schema.Attribute.Component<'acf-shared.qubi-plan-item', true>;
+    popular_label: Schema.Attribute.String;
+    profile_items: Schema.Attribute.Component<
+      'acf-shared.platform-label-value',
+      true
+    >;
+    profile_label: Schema.Attribute.String;
     Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
   };
 }
@@ -1210,6 +1227,19 @@ export interface AcfSharedQubiOutcomesSectionOutcomeItems
   };
 }
 
+export interface AcfSharedQubiPlanCompareRow extends Struct.ComponentSchema {
+  collectionName: 'components_acf_shared_qubi_plan_compare_rows';
+  info: {
+    description: 'One row of the compare-plans table: an aspect plus one value per plan, in plan order';
+    displayName: 'Qubi Plan Compare Row';
+  };
+  attributes: {
+    aspect: Schema.Attribute.String;
+    Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    values: Schema.Attribute.Component<'acf-shared.qubi-text-paragraph', true>;
+  };
+}
+
 export interface AcfSharedQubiPlanItem extends Struct.ComponentSchema {
   collectionName: 'components_acf_shared_qubi_plan_items';
   info: {
@@ -1222,7 +1252,11 @@ export interface AcfSharedQubiPlanItem extends Struct.ComponentSchema {
       'acf-shared.qubi-text-paragraph',
       true
     >;
+    fit_description: Schema.Attribute.Text;
+    fit_title: Schema.Attribute.String;
+    popular: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    tab_label: Schema.Attribute.String;
     tagline: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
@@ -1520,7 +1554,6 @@ export interface AcfSharedSolutionsUseCasesLayoutItems
   attributes: {
     categoryLabel: Schema.Attribute.String;
     description: Schema.Attribute.Text;
-    icon: Schema.Attribute.String;
     Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     stats: Schema.Attribute.Component<
       'acf-shared.solutions-use-cases-layout-stat-item',
@@ -1809,6 +1842,7 @@ declare module '@strapi/strapi' {
       'acf-shared.qubi-icon-card-item': AcfSharedQubiIconCardItem;
       'acf-shared.qubi-integration-section-integration-items': AcfSharedQubiIntegrationSectionIntegrationItems;
       'acf-shared.qubi-outcomes-section-outcome-items': AcfSharedQubiOutcomesSectionOutcomeItems;
+      'acf-shared.qubi-plan-compare-row': AcfSharedQubiPlanCompareRow;
       'acf-shared.qubi-plan-item': AcfSharedQubiPlanItem;
       'acf-shared.qubi-problem-section-problem-items': AcfSharedQubiProblemSectionProblemItems;
       'acf-shared.qubi-stat-item': AcfSharedQubiStatItem;
