@@ -1087,6 +1087,7 @@ export interface AcfSharedQubiCaseStudy extends Struct.ComponentSchema {
     challenge: Schema.Attribute.Text;
     industry: Schema.Attribute.String;
     metrics: Schema.Attribute.Component<'acf-shared.qubi-case-metric', true>;
+    nav_metric: Schema.Attribute.String;
     Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     quote: Schema.Attribute.Text;
     quote_role: Schema.Attribute.String;

@@ -22,14 +22,17 @@
     "quote_role": {
       "type": "string"
     },
-     "Publish": {
-  "type": "boolean",
-  "default": true
-},
+    "Publish": {
+      "type": "boolean",
+      "default": true
+    },
     "metrics": {
       "type": "component",
-      "repeatable": true,
-      "component": "acf-shared.qubi-case-metric"
+      "component": "acf-shared.qubi-case-metric",
+      "repeatable": true
+    },
+    "nav_metric": {
+      "type": "string"
     }
   }
 }
