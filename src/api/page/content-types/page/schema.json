@@ -6,11 +6,54 @@
     "singularName": "page",
     "pluralName": "pages"
   },
-  "options": {
-    "draftAndPublish": false
-  },
-  "pluginOptions": {},
   "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        }
+      }
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        }
+      }
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "pageType": {
+      "type": "enumeration",
+      "enum": [
+        "landing",
+        "blog",
+        "about",
+        "service",
+        "career",
+        "resource"
+      ],
+      "default": "landing",
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        }
+      }
+    },
+    "acf": {
+      "type": "json",
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        }
+      }
+    },
     "pageBuilder": {
       "type": "dynamiczone",
       "configurable": false,
@@ -62,53 +105,6 @@
         "acf-sections.platform-bridge",
         "acf-sections.qubi-differentiators-section"
       ]
-    },
-    "title": {
-      "type": "string",
-      "pluginOptions": {
-        "content-manager": {
-          "visible": false
-        }
-      }
-    },
-    "slug": {
-      "type": "uid",
-      "pluginOptions": {
-        "content-manager": {
-          "visible": false
-        }
-      },
-      "targetField": "title"
-    },
-    "seo": {
-      "type": "component",
-      "component": "shared.seo",
-      "repeatable": false
-    },
-    "pageType": {
-      "type": "enumeration",
-      "pluginOptions": {
-        "content-manager": {
-          "visible": false
-        }
-      },
-      "default": "landing",
-      "enum": [
-        "landing",
-        "blog",
-        "about",
-        "service",
-        "career",
-        "resource"
-      ]
-    },
-    "acf": {
-      "type": "json",
-      "pluginOptions": {
-        "content-manager": {
-          "visible": false
-        }
-      }
     }
   }
 }
