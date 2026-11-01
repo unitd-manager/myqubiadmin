@@ -4,9 +4,6 @@
     "displayName": "Qubi Use Cases Section Use Case Items"
   },
   "attributes": {
-    "icon": {
-      "type": "string"
-    },
     "title": {
       "type": "text"
     },

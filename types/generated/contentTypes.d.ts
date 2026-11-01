@@ -583,12 +583,10 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   };
   attributes: {
     columns: Schema.Attribute.Component<'shared.footer-column', true>;
-    copyright_text: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     legal_links: Schema.Attribute.Component<'shared.menu-item', true>;
-    links: Schema.Attribute.Component<'shared.menu-item', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -633,7 +631,6 @@ export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     logo: Schema.Attribute.Media<'images'>;
-    logo_link: Schema.Attribute.String;
     nav_links: Schema.Attribute.Component<'shared.nav-parent', true>;
     powered_by_label: Schema.Attribute.String;
     powered_by_logo: Schema.Attribute.Media<

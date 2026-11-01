@@ -594,7 +594,6 @@ export interface AcfSectionsQubiProblemSection extends Struct.ComponentSchema {
     displayName: 'Qubi Problem Section';
   };
   attributes: {
-    conclusion_text: Schema.Attribute.Text;
     description: Schema.Attribute.RichText;
     eyebrow: Schema.Attribute.String;
     main_title: Schema.Attribute.Text;
@@ -1040,7 +1039,6 @@ export interface AcfSharedQubiAnalyticsSectionFeatures
   };
   attributes: {
     description: Schema.Attribute.RichText;
-    icon: Schema.Attribute.String;
     Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     story_label: Schema.Attribute.String;
     title: Schema.Attribute.Text;
@@ -1235,7 +1233,6 @@ export interface AcfSharedQubiProblemSectionProblemItems
     displayName: 'Qubi Problem Section Problem Items';
   };
   attributes: {
-    icon: Schema.Attribute.String;
     Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     title: Schema.Attribute.Text;
   };
@@ -1278,7 +1275,6 @@ export interface AcfSharedQubiUseCasesSectionUseCaseItems
   attributes: {
     chips: Schema.Attribute.Text;
     description: Schema.Attribute.RichText;
-    icon: Schema.Attribute.String;
     panel_title: Schema.Attribute.String;
     Publish: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     scenario: Schema.Attribute.Text;
@@ -1679,7 +1675,6 @@ export interface SharedNavParent extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
-    children: Schema.Attribute.Component<'shared.menu-item', true>;
     label: Schema.Attribute.String;
     publish: Schema.Attribute.Boolean;
     url: Schema.Attribute.String;
@@ -1693,7 +1688,6 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
   attributes: {
     canonicalURL: Schema.Attribute.String;
-    conclusion_text: Schema.Attribute.Text;
     focusKeyword: Schema.Attribute.String;
     keywords: Schema.Attribute.String;
     metaDescription: Schema.Attribute.Text;
@@ -1703,8 +1697,6 @@ export interface SharedSeo extends Struct.ComponentSchema {
     ogImage: Schema.Attribute.Media<'images'>;
     ogTitle: Schema.Attribute.String;
     schema: Schema.Attribute.JSON;
-    Text: Schema.Attribute.String;
-    title_highlight: Schema.Attribute.String;
     twitterCard: Schema.Attribute.Enumeration<
       ['summary', 'summary_large_image']
     > &

@@ -4,13 +4,10 @@
     "displayName": "Qubi Problem Section Problem Items"
   },
   "attributes": {
-    "icon": {
-      "type": "string"
+    "Publish": {
+      "type": "boolean",
+      "default": true
     },
-     "Publish": {
-  "type": "boolean",
-  "default": true
-},
     "title": {
       "type": "text"
     }

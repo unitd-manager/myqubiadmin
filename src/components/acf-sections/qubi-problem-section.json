@@ -25,9 +25,6 @@
     "title_highlight": {
       "type": "string"
     },
-    "conclusion_text": {
-      "type": "text"
-    },
     "outcome_cards": {
       "type": "component",
       "component": "shared.flow-node",

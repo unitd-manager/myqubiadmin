@@ -19,9 +19,6 @@
         "images"
       ]
     },
-    "logo_link": {
-      "type": "string"
-    },
     "nav_links": {
       "type": "component",
       "component": "shared.nav-parent",

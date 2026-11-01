@@ -4,9 +4,6 @@
     "displayName": "Qubi Analytics Section Features"
   },
   "attributes": {
-    "icon": {
-      "type": "string"
-    },
     "title": {
       "type": "text"
     },

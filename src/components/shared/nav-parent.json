@@ -13,11 +13,6 @@
     },
     "publish": {
       "type": "boolean"
-    },
-    "children": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.menu-item"
     }
   }
 }

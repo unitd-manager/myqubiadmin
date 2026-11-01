@@ -49,15 +49,6 @@
     },
     "schema": {
       "type": "json"
-    },
-    "Text": {
-      "type": "string"
-    },
-    "title_highlight": {
-      "type": "string"
-    },
-    "conclusion_text": {
-      "type": "text"
     }
   }
 }
