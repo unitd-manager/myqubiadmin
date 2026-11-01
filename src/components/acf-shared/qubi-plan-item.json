@@ -10,16 +10,29 @@
     "title": {
       "type": "string"
     },
+    "tab_label": {
+      "type": "string"
+    },
+    "popular": {
+      "type": "boolean",
+      "default": false
+    },
     "description": {
       "type": "text"
     },
     "cta_label": {
       "type": "string"
     },
-     "Publish": {
-  "type": "boolean",
-  "default": true
-},
+    "fit_title": {
+      "type": "string"
+    },
+    "fit_description": {
+      "type": "text"
+    },
+    "Publish": {
+      "type": "boolean",
+      "default": true
+    },
     "features": {
       "type": "component",
       "repeatable": true,

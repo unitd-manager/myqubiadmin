@@ -4,7 +4,6 @@
     "displayName": "Solutions Use Case Item"
   },
   "attributes": {
-    "icon": { "type": "string" },
     "categoryLabel": { "type": "string" },
     "title": { "type": "string" },
     "description": { "type": "text" },

@@ -2,7 +2,7 @@
   "collectionName": "components_acf_sections_qubi_plans_sections",
   "info": {
     "displayName": "Qubi Plans Section",
-    "description": "Pricing plan cards with feature lists and a highlight option"
+    "description": "Pricing plan explorer: plan tabs, selected plan details, best-fit panel, program profile and the compare-plans table"
   },
   "attributes": {
     "eyebrow": {
@@ -11,19 +11,47 @@
     "main_title": {
       "type": "text"
     },
-    "description": {
-      "type": "text"
+    "Publish": {
+      "type": "boolean",
+      "default": true
     },
-     "Publish": {
-  "type": "boolean",
-  "default": true
-},
     "cta_url": {
       "type": "string"
+    },
+    "nav_label": {
+      "type": "string"
+    },
+    "popular_label": {
+      "type": "string"
+    },
+    "compare_button_label": {
+      "type": "string"
+    },
+    "fit_label": {
+      "type": "string"
+    },
+    "profile_label": {
+      "type": "string"
+    },
+    "profile_items": {
+      "type": "component",
+      "component": "acf-shared.platform-label-value",
+      "repeatable": true
     },
     "plans": {
       "type": "component",
       "component": "acf-shared.qubi-plan-item",
+      "repeatable": true
+    },
+    "compare_title": {
+      "type": "string"
+    },
+    "compare_aspect_label": {
+      "type": "string"
+    },
+    "compare_rows": {
+      "type": "component",
+      "component": "acf-shared.qubi-plan-compare-row",
       "repeatable": true
     }
   }

@@ -15,6 +15,9 @@
   "type": "boolean",
   "default": true
 },
+    "aspect_label": {
+      "type": "string"
+    },
     "them_label": {
       "type": "string",
       "default": "Workflow Automation Tools"

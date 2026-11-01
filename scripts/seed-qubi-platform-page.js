@@ -165,6 +165,8 @@ const pageBuilder = [
     sidebar_label: "Platform capabilities",
     details_heading: "Key capabilities",
     footer_text: "Part of the connected qubi platform ecosystem",
+    footer_brand: "Platform",
+    // footer_logo is attached in main() after uploading scripts/assets/qubi-logo.png
     categories: CATEGORIES.map((text) => ({ text })),
     products: PRODUCTS.map(({ capabilities, ...product }) => ({
       ...product,
@@ -255,6 +257,27 @@ async function main() {
   app.log.level = "error";
 
   try {
+    // Reuse the logo if it was uploaded before, otherwise upload it once.
+    const path = require("path");
+    const fs = require("fs");
+    const logoPath = path.join(__dirname, "assets", "qubi-logo.png");
+    let logo = await app.db.query("plugin::upload.file").findOne({ where: { name: "qubi-logo.png" } });
+    if (!logo) {
+      [logo] = await app.plugin("upload").service("upload").upload({
+        data: { fileInfo: { name: "qubi-logo.png", alternativeText: "qubi" } },
+        files: { filepath: logoPath, originalFilename: "qubi-logo.png", mimetype: "image/png", size: fs.statSync(logoPath).size },
+      });
+    }
+    // Uploads are stored on each machine's disk while the DB is shared, so the
+    // file can be missing locally even though its record exists: restore it.
+    const localFile = path.join(app.dirs.static.public, logo.url);
+    if (!fs.existsSync(localFile)) {
+      fs.mkdirSync(path.dirname(localFile), { recursive: true });
+      fs.copyFileSync(logoPath, localFile);
+    }
+    const explorer = pageBuilder.find((b) => b.__component === "acf-sections.platform-explorer");
+    explorer.footer_logo = logo.id;
+
     const existing = await app.documents("api::page.page").findFirst({
       filters: { slug: "platform" },
     });
